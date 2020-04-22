@@ -25,7 +25,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="0"/>
 
         <ImageView
             android:id="@+id/img_2"
@@ -37,7 +38,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn"/>
+            android:onClick="dropIn"
+            android:tag="1"/>
 
         <ImageView
             android:id="@+id/img_3"
@@ -48,7 +50,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="2"/>
 
         <ImageView
             android:id="@+id/img_4"
@@ -59,7 +62,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="3"/>
 
         <ImageView
             android:id="@+id/img_5"
@@ -69,7 +73,8 @@
             android:layout_column="1"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="4"/>
 
         <ImageView
             android:id="@+id/img_6"
@@ -79,7 +84,8 @@
             android:layout_column="2"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="30dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="5"/>
 
         <ImageView
             android:id="@+id/img_7"
@@ -90,7 +96,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="6"/>
 
         <ImageView
             android:id="@+id/img_8"
@@ -100,7 +107,8 @@
             android:layout_column="1"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="7"/>
 
         <ImageView
             android:id="@+id/img_9"
@@ -111,10 +119,26 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:onClick="dropIn" />
+            android:onClick="dropIn"
+            android:tag="8"/>
 
 
     </GridLayout>
 
+    <LinearLayout
+        android:id="@+id/playAgainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+        <Button
+            android:id="@+id/btn_playAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Again!!!"
+            />
+    </LinearLayout>
 
 </RelativeLayout>
