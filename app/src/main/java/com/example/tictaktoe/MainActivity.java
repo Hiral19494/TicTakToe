@@ -2,6 +2,7 @@ package com.example.tictaktoe;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -53,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     if (gameState[winningPosition[0]] == 0) {
                         winner = "Yellow Won";
                     }
-                   winnerMessage(winner);
-                }
-                else {
+                    winnerMessage(winner);
+                } else {
                     boolean gameIsOver = true;
                     for (int counterState : gameState) {
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    if(gameIsOver == true){
+                    if (gameIsOver == true) {
                         winner = " It is draw ";
                         winnerMessage(winner);
 
@@ -74,10 +74,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public String winnerMessage(String stringMsg){
+    public String winnerMessage(String stringMsg) {
         Toast.makeText(getBaseContext(), stringMsg, Toast.LENGTH_LONG).show();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.playAgainLayout);
         linearLayout.setVisibility(View.VISIBLE);
         return null;
+    }
+
+    public void playAgain(View view) {
+        gameIsActive = true;
+
+        LinearLayout layout = (LinearLayout)findViewById(R.id.playAgainLayout);
+
+        layout.setVisibility(View.INVISIBLE);
+
+        activePlayer = 0;
+
+        for (int i = 0; i < gameState.length; i++) {
+
+            gameState[i] = 2;
+
+        }
+
+        GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout);
+
+        for (int i = 0; i< gridLayout.getChildCount(); i++) {
+
+            ((ImageView) gridLayout.getChildAt(i)).setImageResource(0);
+
+        }
     }
 }
