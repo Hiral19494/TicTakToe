@@ -7,6 +7,9 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    //0= yellow; 1= red
+    int activePlayer = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void dropIn(View view) {
         ImageView counter = (ImageView) view;
-        counter.setTranslationY(-1000f);
-        counter.setImageResource(R.drawable.yellow);
-        counter.animate().translationYBy(1000f).rotationBy(360).setDuration(1000);
+
+        if (activePlayer == 0) {
+            counter.setImageResource(R.drawable.yellow);
+            counter.setTranslationY(-1000f);
+            counter.animate().translationYBy(1000f).rotationBy(360).setDuration(1000);
+            activePlayer = 1;
+        } else {
+            counter.setImageResource(R.drawable.red);
+            counter.setTranslationX(-1000f);
+            counter.animate().translationXBy(1000f).rotationBy(360).setDuration(1000);
+            activePlayer = 0;
+        }
 
     }
 }
